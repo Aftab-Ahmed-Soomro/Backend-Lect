@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import productRoute from "./Routes/ProductsRoute.js";
+import usersRoute from "./Routes/usersRoute.js";
 
 const app = express();
 dotenv.config();
@@ -12,6 +13,8 @@ app.get('/',(req,res)=> {
 })
 
 app.use("/products",productRoute);
+
+app.use("/users",usersRoute);
 
 // app.get('/profile',(req,res)=> {
 //     res.status(200).send("Welcome To Profile");
